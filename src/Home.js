@@ -81,6 +81,7 @@ const Home = () => {
         { label: "Framework", value: "React" },
         { label: "UI Design", value: "Figma" },
       ],
+      github: "https://github.com/Ezhil2389/Personal-Portfolio-React"
     },
   ];
 
