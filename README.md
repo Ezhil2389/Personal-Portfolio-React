@@ -1,4 +1,4 @@
-# Personal Portfolio Website
+# Personal Portfolio Website using React
 
 This project is a personal portfolio website built with React, showcasing skills, projects, and contact information. It features a responsive design, smooth animations, and a modern UI.
 
