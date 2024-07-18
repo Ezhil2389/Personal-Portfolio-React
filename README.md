@@ -110,7 +110,7 @@ For example, to deploy to GitHub Pages:
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome. Feel free to check [issues page](https://github.com/your-username/your-portfolio-repo/issues) if you want to contribute.
+Contributions, issues, and feature requests are welcome. Feel free to check [issues page]([https://github.com/your-username/your-portfolio-repo/issues](https://github.com/Ezhil2389/Personal-Portfolio-React/issues)) if you want to contribute.
 
 ## License
 
