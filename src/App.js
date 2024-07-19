@@ -1,9 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, GithubIcon, LinkedinIcon, MailIcon, ChevronDown } from 'lucide-react';
 import './index.css';
 import Certificates from './Certificates';
 import Home from './Home';
+
+const NavLink = ({ to, children, onClick }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.querySelector(to);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const element = document.querySelector(to);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (onClick) onClick();
+  };
+
+  return (
+    <a href={to} onClick={handleClick} className="nav-link">
+      {children}
+    </a>
+  );
+};
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,10 +53,10 @@ const App = () => {
               <Link to="/" className="text-2xl font-bold text-green-400 shine-effect">ER</Link>
               <div className="hidden md:flex space-x-8">
                 <Link to="/" className="nav-link">Home</Link>
-                <a href="#skills" className="nav-link">Skills</a>
-                <a href="#projects" className="nav-link">Projects</a>
+                <NavLink to="#skills">Skills</NavLink>
+                <NavLink to="#projects">Projects</NavLink>
                 <Link to="/certificates" className="nav-link">Certificates</Link>
-                <a href="#contact" className="nav-link">Contact</a>
+                <NavLink to="#contact">Contact</NavLink>
               </div>
               <div className="md:hidden">
                 <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -43,10 +69,10 @@ const App = () => {
           <div className={`${menuOpen ? 'block' : 'hidden'} md:hidden bg-gray-800 absolute top-full left-0 right-0 shadow-lg`}>
             <div className="flex flex-col px-4 py-2">
               <Link to="/" className="mobile-nav-link py-2" onClick={toggleMenu}>Home</Link>
-              <a href="#skills" className="mobile-nav-link py-2" onClick={toggleMenu}>Skills</a>
-              <a href="#projects" className="mobile-nav-link py-2" onClick={toggleMenu}>Projects</a>
+              <NavLink to="#skills" onClick={toggleMenu}>Skills</NavLink>
+              <NavLink to="#projects" onClick={toggleMenu}>Projects</NavLink>
               <Link to="/certificates" className="mobile-nav-link py-2" onClick={toggleMenu}>Certificates</Link>
-              <a href="#contact" className="mobile-nav-link py-2" onClick={toggleMenu}>Contact</a>
+              <NavLink to="#contact" onClick={toggleMenu}>Contact</NavLink>
             </div>
           </div>
         </nav>
