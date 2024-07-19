@@ -25,7 +25,7 @@ const Home = () => {
   const titles = [
     "B.Tech CCE Student",
     "UI/UX Designer",
-    "Web Developer",
+    "Full-Stack Developer",
     "Music Producer"
   ];
 
@@ -68,8 +68,8 @@ const Home = () => {
 
   const skills = [
     { title: 'Web Development', subpoints: ['Angular', 'React', 'SpringBoot'] },
-    { title: 'UI/UX Design', subpoints: ['Figma', 'AdobeXD'] },
-    { title: 'Computer Networks', subpoints: ['Tetcos Netsim'] },
+    { title: 'UI/UX Design & Research', subpoints: ['Figma', 'AdobeXD'] },
+    { title: 'Computer Networks', subpoints: ['Tetcos Netsim','Wireshark'] },
     { title: 'DBMS', subpoints: ['MySQL', 'MongoDB'] },
     { title: 'DevOps', subpoints: ['Git', 'Jenkins', 'Kubernetes'] },
     { title: 'Media', subpoints: ['DaVinci Resolve', 'Final Cut Pro X'] },
@@ -190,9 +190,9 @@ const Home = () => {
         >
           <h2 className="text-3xl font-bold mb-8 text-green-400">About Me</h2>
           <p className="text-xl mb-8 leading-relaxed">
-            I'm an Undergraduate Student with a passion for Front-end Web Development and UI-UX designing. 
+            I'm an Undergraduate Student with a passion for Full-Stack Web Development and UI-UX design/Research. 
             My skills in creative thinking and execution, combined with my interest in Computer Networks 
-            and Communication Systems, drive me to create innovative solutions.
+            and Communication Systems, drive me to create innovative solutions and cool products.
           </p>
           <div className="flex justify-center space-x-6">
             <a 
