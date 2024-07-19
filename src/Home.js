@@ -86,6 +86,10 @@ const Home = () => {
     },
   ];
 
+  const handleMusicClick = () => {
+    window.open('https://open.spotify.com/artist/0Pu62Uc06oxyp57I7HO7jB?si=ybmtaML_S3SvU4q-3ibuWQ', '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 text-white font-sans">
       {/* Hero Section */}
@@ -151,7 +155,12 @@ const Home = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-green-400">Skills</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skills.map((skill, index) => (
-              <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg glassmorphism transform hover:scale-105 transition duration-300">
+              <div 
+                key={index} 
+                className={`bg-gray-800 p-6 rounded-lg shadow-lg glassmorphism transform hover:scale-105 transition duration-300 ${skill.title === 'Music' ? 'cursor-pointer' : ''}`}
+                onClick={skill.title === 'Music' ? handleMusicClick : undefined}
+                data-skill={skill.title}
+              >
                 <h3 className="text-xl font-semibold mb-4 text-green-400">{skill.title}</h3>
                 <ul className="list-disc list-inside text-gray-300">
                   {skill.subpoints.map((subpoint, subIndex) => (
@@ -223,6 +232,7 @@ const Home = () => {
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p>&copy; 2024 Ezhil R. All rights reserved.</p>
+          <p className="mt-2 text-sm text-gray-400">Want to check out my music? Well, find the easter egg to check my Spotify out!</p>
         </div>
       </footer>
     </div>
