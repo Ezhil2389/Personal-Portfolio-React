@@ -118,6 +118,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Your Name - [Ezhil Ravichandran](mailto:ezhilrav@gmail.com)
+Name - [Ezhil Ravichandran](mailto:ezhilrav@gmail.com)
 
 Project Link: [https://github.com/your-username/your-portfolio-repo](https://github.com/your-username/your-portfolio-repo)
