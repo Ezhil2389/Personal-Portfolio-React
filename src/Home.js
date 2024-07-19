@@ -152,7 +152,7 @@ const Home = () => {
           <div className="flex justify-center space-x-4">
             <motion.a 
               href="#contact" 
-              className="bg-green-400 text-gray-900 py-3 px-8 rounded-full text-lg font-semibold hover:bg-green-300 transition duration-300 shine-effect"
+              className="get-in-touch bg-green-400 text-gray-900 py-3 px-8 rounded-full text-lg font-semibold hover:bg-green-300 transition duration-300 shine-effect"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -162,7 +162,7 @@ const Home = () => {
               href="https://drive.google.com/file/d/1m2Z8l2A3c6B2ahkJnrvO-8isLqudVaI_/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="bg-gray-800 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-gray-700 transition duration-300 shine-effect"
+              className="download-resume bg-gray-800 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-gray-700 transition duration-300 shine-effect"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
