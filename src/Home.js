@@ -64,6 +64,7 @@ const Home = () => {
         { label: "Language", value: "Python" },
         { label: "Service", value: "Twilio SMS Service" },
       ],
+      github: "https://github.com/Ezhil2389/Raspberry-Pi-Door-Security-Camera"
     },
     {
       title: "Task Management System",
@@ -76,7 +77,7 @@ const Home = () => {
     },
     {
       title: "This Portfolio",
-      description: "A Portfolio website made on React!",
+      description: "A Portfolio website made on React! A showcase of all my projects, skills and certifications",
       details: [
         { label: "Framework", value: "React" },
         { label: "UI Design", value: "Figma" },
