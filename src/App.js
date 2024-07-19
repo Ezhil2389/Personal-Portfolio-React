@@ -5,7 +5,7 @@ import './index.css';
 import Certificates from './Certificates';
 import Home from './Home';
 
-const NavLink = ({ to, children, onClick }) => {
+const NavLink = ({ to, children, onClick, className }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -25,7 +25,7 @@ const NavLink = ({ to, children, onClick }) => {
   };
 
   return (
-    <a href={to} onClick={handleClick} className="nav-link">
+    <a href={to} onClick={handleClick} className={className || "nav-link"}>
       {children}
     </a>
   );
@@ -68,11 +68,11 @@ const App = () => {
           {/* Mobile menu */}
           <div className={`${menuOpen ? 'block' : 'hidden'} md:hidden bg-gray-800 absolute top-full left-0 right-0 shadow-lg`}>
             <div className="flex flex-col px-4 py-2">
-              <Link to="/" className="mobile-nav-link py-2" onClick={toggleMenu}>Home</Link>
-              <NavLink to="#skills" onClick={toggleMenu}>Skills</NavLink>
-              <NavLink to="#projects" onClick={toggleMenu}>Projects</NavLink>
-              <Link to="/certificates" className="mobile-nav-link py-2" onClick={toggleMenu}>Certificates</Link>
-              <NavLink to="#contact" onClick={toggleMenu}>Contact</NavLink>
+              <Link to="/" className="mobile-nav-link" onClick={toggleMenu}>Home</Link>
+              <NavLink to="#skills" className="mobile-nav-link" onClick={toggleMenu}>Skills</NavLink>
+              <NavLink to="#projects" className="mobile-nav-link" onClick={toggleMenu}>Projects</NavLink>
+              <Link to="/certificates" className="mobile-nav-link" onClick={toggleMenu}>Certificates</Link>
+              <NavLink to="#contact" className="mobile-nav-link" onClick={toggleMenu}>Contact</NavLink>
             </div>
           </div>
         </nav>
@@ -82,6 +82,32 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/certificates" element={<Certificates />} />
         </Routes>
+
+        {/* Footer */}
+        <footer className="bg-gray-800 py-8">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="text-center md:text-left mb-4 md:mb-0">
+                <h2 className="text-2xl font-bold text-green-400">Ezhil R</h2>
+                <p className="text-gray-400">B.Tech CCE Student</p>
+              </div>
+              <div className="flex space-x-4">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                  <GithubIcon size={24} />
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                  <LinkedinIcon size={24} />
+                </a>
+                <a href="mailto:youremail@example.com" className="text-gray-400 hover:text-white">
+                  <MailIcon size={24} />
+                </a>
+              </div>
+            </div>
+            <div className="mt-8 text-center text-gray-400">
+              <p>&copy; {new Date().getFullYear()} Ezhil R. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
       </div>
     </Router>
   );
