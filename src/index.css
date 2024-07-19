@@ -76,3 +76,7 @@ code {
   right: 0;
 }
 
+
+.mobile-nav-link {
+  @apply text-white hover:text-green-400 transition duration-300 text-lg font-medium;
+}

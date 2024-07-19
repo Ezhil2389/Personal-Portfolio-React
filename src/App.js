@@ -39,12 +39,15 @@ const App = () => {
               </div>
             </div>
           </div>
-          <div className={`${menuOpen ? 'block' : 'hidden'} md:hidden bg-gray-800`}>
-            <Link to="/" className="mobile-nav-link">Home</Link>
-            <a href="#skills" className="mobile-nav-link">Skills</a>
-            <a href="#projects" className="mobile-nav-link">Projects</a>
-            <Link to="/certificates" className="mobile-nav-link">Certificates</Link>
-            <a href="#contact" className="mobile-nav-link">Contact</a>
+          {/* Mobile menu */}
+          <div className={`${menuOpen ? 'block' : 'hidden'} md:hidden bg-gray-800 absolute top-full left-0 right-0 shadow-lg`}>
+            <div className="flex flex-col px-4 py-2">
+              <Link to="/" className="mobile-nav-link py-2" onClick={toggleMenu}>Home</Link>
+              <a href="#skills" className="mobile-nav-link py-2" onClick={toggleMenu}>Skills</a>
+              <a href="#projects" className="mobile-nav-link py-2" onClick={toggleMenu}>Projects</a>
+              <Link to="/certificates" className="mobile-nav-link py-2" onClick={toggleMenu}>Certificates</Link>
+              <a href="#contact" className="mobile-nav-link py-2" onClick={toggleMenu}>Contact</a>
+            </div>
           </div>
         </nav>
 
