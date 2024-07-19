@@ -332,7 +332,7 @@ const Home = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p>&copy; 2024 Ezhil R. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Ezhil R. All rights reserved.</p>
           <p className="mt-2 text-sm text-gray-400">Want to check out my music? Well, find the easter egg to check my Spotify out!</p>
         </div>
       </footer>
