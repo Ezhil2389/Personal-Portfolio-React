@@ -149,26 +149,26 @@ const Home = () => {
               </CSSTransition>
             </TransitionGroup>
           </div>
-          <div className="flex justify-center space-x-4">
+            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
             <motion.a 
-              href="#contact" 
-              className="get-in-touch bg-green-400 text-gray-900 py-3 px-8 rounded-full text-lg font-semibold hover:bg-green-300 transition duration-300 shine-effect"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+                href="#contact" 
+                className="get-in-touch bg-green-400 text-gray-900 py-2 px-4 sm:py-3 sm:px-8 rounded-full text-base sm:text-lg font-semibold hover:bg-green-300 transition duration-300 shine-effect w-full sm:w-auto text-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
             >
-              Get in Touch
+                Get in Touch
             </motion.a>
             <motion.a 
-              href="https://drive.google.com/file/d/1m2Z8l2A3c6B2ahkJnrvO-8isLqudVaI_/view?usp=sharing" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="download-resume bg-gray-800 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-gray-700 transition duration-300 shine-effect"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+                href="https://drive.google.com/file/d/1m2Z8l2A3c6B2ahkJnrvO-8isLqudVaI_/view?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="download-resume bg-gray-800 text-white py-2 px-4 sm:py-3 sm:px-8 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-700 transition duration-300 shine-effect w-full sm:w-auto text-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
             >
-              Download Resume
+                Download Resume
             </motion.a>
-          </div>
+            </div>
         </motion.div>
         <motion.div 
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
