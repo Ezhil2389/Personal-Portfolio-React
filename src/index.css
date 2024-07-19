@@ -80,10 +80,7 @@ code {
 .mobile-nav-link {
   @apply text-white hover:text-green-400 transition duration-300 text-lg font-medium;
 }
-.glassmorphism:hover {
-  background-color: rgba(31, 41, 55, 0.8);  /* Slightly lighter on hover */
-  
-}
+
 
 /* Add a specific style for the Music box */
 .glassmorphism[data-skill="Music"]:hover {
