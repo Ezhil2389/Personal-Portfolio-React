@@ -18,6 +18,11 @@ const certificates = [
     link: 'https://learn.mongodb.com/c/V4e_Y_WEQXm00BAkSXlViQ'
   },
   {
+    title: 'JAVA - Mastering the Fundamentals from Scaler',
+    image: 'https://i.ibb.co/dDh7sXF/Java-Certificate.png',
+    link: 'https://moonshot.scaler.com/s/sl/g2RGZtoJGu'
+  },
+  {
     title: 'Citi - Technology Software Development Job Simulation',
     image: 'https://i.ibb.co/CQnJsXx/Whats-App-Image-2024-07-18-at-11-57-14.jpg',
     link: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Citi/2jxESPvorR7fmypXj_Citi_wu6tfojGp9HHQgg5j_1708766365813_completion_certificate.pdf'
@@ -32,6 +37,7 @@ const certificates = [
     image: 'https://i.ibb.co/4jcFs8D/Whats-App-Image-2024-07-18-at-12-00-12.jpg',
     link: 'https://www.linkedin.com/learning/certificates/69c620d7746faf8645ac7fbfc036264951689c60abf9e8f43ad64aeea9f25949'
   },
+  
   // Add more certificates here
 ];
 
