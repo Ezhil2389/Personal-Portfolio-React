@@ -159,7 +159,7 @@ const Home = () => {
                 Get in Touch
             </motion.a>
             <motion.a 
-                href="https://drive.google.com/file/d/1m2Z8l2A3c6B2ahkJnrvO-8isLqudVaI_/view?usp=sharing" 
+                href="https://drive.google.com/file/d/10kOaQrnn4EF-l0--T_5UwQCkbkdQFCkA/view?usp=sharing" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="download-resume bg-gray-800 text-white py-2 px-4 sm:py-3 sm:px-8 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-700 transition duration-300 shine-effect w-full sm:w-auto text-center"
