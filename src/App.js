@@ -92,13 +92,13 @@ const App = () => {
                 <p className="text-gray-400">B.Tech CCE Student</p>
               </div>
               <div className="flex space-x-4">
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                <a href="https://github.com/Ezhil2389" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                   <GithubIcon size={24} />
                 </a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                <a href="https://linkedin.com/in/ezhilr2004" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                   <LinkedinIcon size={24} />
                 </a>
-                <a href="mailto:youremail@example.com" className="text-gray-400 hover:text-white">
+                <a href="mailto:ezhilrav@gmail.com" className="text-gray-400 hover:text-white">
                   <MailIcon size={24} />
                 </a>
               </div>
