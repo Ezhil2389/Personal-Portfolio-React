@@ -37,6 +37,11 @@ const certificates = [
     image: 'https://i.ibb.co/4jcFs8D/Whats-App-Image-2024-07-18-at-12-00-12.jpg',
     link: 'https://www.linkedin.com/learning/certificates/69c620d7746faf8645ac7fbfc036264951689c60abf9e8f43ad64aeea9f25949'
   },
+  {
+    title: 'Introduction to SQL from DataCamp',
+    image: 'https://i.ibb.co/5cf76WF/Screenshot-2024-08-16-at-8-13-34-AM.png',
+    link: 'https://www.datacamp.com/completed/statement-of-accomplishment/course/164713bf6d75e24285efb7f2367e3fb96a604d8f?utm_source=customerio&utm_medium=email&utm_campaign=230517_1-coursetrackcomplete_2-mix_3-all_4-na_5-na_6-coursetrack_7-le_8-emal-ci_9-na_10-bau_11-email&utm_content=auto'
+  },
   
   // Add more certificates here
 ];
