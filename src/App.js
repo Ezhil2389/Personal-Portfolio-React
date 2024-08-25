@@ -43,6 +43,10 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <Router>
       <div className="min-h-screen bg-gray-900 text-white font-sans">
@@ -50,9 +54,9 @@ const App = () => {
         <nav className={`fixed w-full z-50 transition-all duration-300 ${scrollPosition > 50 ? 'bg-gray-900 shadow-lg' : 'bg-transparent'}`}>
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex justify-between items-center py-4">
-              <Link to="/" className="text-2xl font-bold text-green-400 shine-effect">ER</Link>
+              <Link to="/" className="text-2xl font-bold text-green-400 shine-effect" onClick={scrollToTop}>ER</Link>
               <div className="hidden md:flex space-x-8">
-                <Link to="/" className="nav-link">Home</Link>
+                <Link to="/" className="nav-link" onClick={scrollToTop}>Home</Link>
                 <NavLink to="#skills">Skills</NavLink>
                 <NavLink to="#projects">Projects</NavLink>
                 <Link to="/certificates" className="nav-link">Certificates</Link>
@@ -68,7 +72,7 @@ const App = () => {
           {/* Mobile menu */}
           <div className={`${menuOpen ? 'block' : 'hidden'} md:hidden bg-gray-800 absolute top-full left-0 right-0 shadow-lg`}>
             <div className="flex flex-col px-4 py-2">
-              <Link to="/" className="mobile-nav-link" onClick={toggleMenu}>Home</Link>
+              <Link to="/" className="mobile-nav-link" onClick={() => { toggleMenu(); scrollToTop(); }}>Home</Link>
               <NavLink to="#skills" className="mobile-nav-link" onClick={toggleMenu}>Skills</NavLink>
               <NavLink to="#projects" className="mobile-nav-link" onClick={toggleMenu}>Projects</NavLink>
               <Link to="/certificates" className="mobile-nav-link" onClick={toggleMenu}>Certificates</Link>
