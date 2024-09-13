@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { GithubIcon, LinkedinIcon, MailIcon, ChevronDown, Phone, MessageCircle } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, MailIcon, ChevronDown, Phone, MessageCircle, Globe } from 'lucide-react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { motion, useAnimation } from 'framer-motion';
 import './index.css';
@@ -100,6 +100,26 @@ const Home = () => {
       github: "https://github.com/Ezhil2389/Raspberry-Pi-Door-Security-Camera"
     },
     {
+      title: "AutoMow",
+      description: "A webpage with a simulation for an Autonomous lawn mower based on GPS and vSLAM which is under development.",
+      details: [
+        { label: "Frontend", value: "React" },
+        { label: "Hosting", value: "Vercel" },
+      ],
+      github: "https://github.com/Ezhil2389/slam-lawn",
+      website: "https://automow.vercel.app"
+    },
+    {
+      title: "SEPS",
+      description: "A LLM chatbot based on Meta LLAMA 80b model for personal use. (Demo cannot be showed online as LLAMA 80b is only allowed to be used for personal purposes)",
+      details: [
+        { label: "Frontend", value: "React" },
+        { label: "Hosting", value: "Vercel" },
+        { label: "Authentication", value: "Firebase" },
+      ],
+      website: "https://seps.vercel.app"
+    },
+    {
       title: "Task Management System",
       description: "A web application which can add, update and scratch tasks off.",
       details: [
@@ -115,7 +135,8 @@ const Home = () => {
         { label: "Framework", value: "React" },
         { label: "UI Design", value: "Figma" },
       ],
-      github: "https://github.com/Ezhil2389/Personal-Portfolio-React"
+      github: "https://github.com/Ezhil2389/Personal-Portfolio-React",
+      website: "https://ezhilravi.vercel.app"
     },
   ];
 
@@ -204,7 +225,7 @@ const Home = () => {
               <GithubIcon size={28} />
             </a>
             <a 
-              href="https://www.linkedin.com/" 
+              href="https://www.linkedin.com/in/ezhilr2004" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-400 hover:text-green-400 transition duration-300"
@@ -251,99 +272,111 @@ const Home = () => {
       </section>
 
       {/* Projects Section */}
-      {/* Projects Section */}
-<section id="projects" ref={sectionRefs.projects} className="py-20 px-4 bg-gray-800">
-  <div className="max-w-6xl mx-auto">
-    <h2 className="text-3xl font-bold text-center mb-12 text-green-400">My Projects</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {projects.map((project, index) => (
-        <motion.div 
-          key={index}
-          className="bg-gray-900 p-6 rounded-lg shadow-lg glassmorphism transform transition duration-300"
-          onClick={() => toggleProject(index)}
-          initial={{ opacity: 0, y: 50 }}
-          animate={controls}
-          custom={index}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <h3 className="text-xl font-semibold mb-4 text-green-400">{project.title}</h3>
-          <p className="text-gray-300 mb-4">{project.description}</p>
-          <motion.div 
-            className="overflow-hidden"
-            initial={{ height: 0 }}
-            animate={{ height: expandedProject === index ? 'auto' : 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            <motion.div 
-              className="mt-4 text-gray-300"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: expandedProject === index ? 1 : 0 }}
-              transition={{ duration: 0.3, delay: expandedProject === index ? 0.1 : 0 }}
-            >
-              {project.details.map((detail, detailIndex) => (
-                <p key={detailIndex}><strong>{detail.label}:</strong> {detail.value}</p>
-              ))}
-              {project.github && (
-                <motion.a 
-                  href={project.github} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-green-400 hover:text-green-300 font-semibold transition duration-300 block mt-2"
-                  whileHover={{ x: 5 }}
-                >
-                  View on GitHub &rarr;
-                </motion.a>
-              )}
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
-
-      {/* Contact Section */}
-      <section id="contact" ref={sectionRefs.contact} className="py-20 px-4 bg-gray-900">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-green-400">Get in Touch</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: Phone, text: "Call Me", subtext: "+91 9884063255", href: "tel:+919884063255" },
-              { icon: MessageCircle, text: "WhatsApp", subtext: "+91 9884063255", href: "https://wa.me/919884063255" },
-              { icon: MailIcon, text: "Email", subtext: "ezhilrav@gmail.com", href: "mailto:ezhilrav@gmail.com" }
-            ].map((item, index) => (
-                <a 
+      <section id="projects" ref={sectionRefs.projects} className="py-20 px-4 bg-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-green-400">My Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <motion.div 
                 key={index}
-                href={item.href} 
-                target={item.icon === MessageCircle ? "_blank" : "_self"}
-                rel={item.icon === MessageCircle ? "noopener noreferrer" : ""}
-                className="flex flex-col items-center p-6 bg-gray-800 hover:bg-gray-700 rounded-lg transition duration-300"
+                className="bg-gray-900 p-6 rounded-lg shadow-lg glassmorphism transform transition duration-300"
+                onClick={() => toggleProject(index)}
+                initial={{ opacity: 0, y: 50 }}
+                animate={controls}
+                custom={index}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <item.icon size={48} className="text-green-400 mb-4" />
-                <span className="text-lg font-semibold">{item.text}</span>
-                <span className="text-gray-300">{item.subtext}</span>
-              </a>
+                <h3 className="text-xl font-semibold mb-4 text-green-400">{project.title}</h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
+                <motion.div 
+                  className="overflow-hidden"
+                  initial={{ height: 0 }}
+                  animate={{ height: expandedProject === index ? 'auto' : 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <motion.div 
+                    className="mt-4 text-gray-300"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: expandedProject === index ? 1 : 0 }}
+                    transition={{ duration: 0.3, delay: expandedProject === index ? 0.1 : 0 }}
+                  >
+                    {project.details.map((detail, detailIndex) => (
+                      <p key={detailIndex}><strong>{detail.label}:</strong> {detail.value}</p>
+                    ))}
+                    <div className="flex mt-4 space-x-4">
+                      {project.github && (
+                        <motion.a 
+                          href={project.github} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-green-400 hover:text-green-300 transition duration-300"
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          <GithubIcon size={24} />
+                        </motion.a>
+                      )}
+                      {project.website && (
+                        <motion.a 
+                          href={project.website} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-green-400 hover:text-green-300 transition duration-300"
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          <Globe size={24} />
+                        </motion.a>
+                      )}
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-        <p>&copy; {new Date().getFullYear()} Ezhil R. All rights reserved.</p>
-          <p className="mt-2 text-sm text-gray-400">Want to check out my music? Well, find the easter egg to check my Spotify out!</p>
-        </div>
-      </footer>
-
-      {/* Scroll Progress Indicator */}
-      <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-green-400 z-50"
-        style={{ scaleX: scrollPosition / (document.documentElement.scrollHeight - window.innerHeight) }}
-      />
-    </div>
-  );
-};
-
-export default Home;
+  
+        {/* Contact Section */}
+        <section id="contact" ref={sectionRefs.contact} className="py-20 px-4 bg-gray-900">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12 text-green-400">Get in Touch</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { icon: Phone, text: "Call Me", subtext: "+91 9884063255", href: "tel:+919884063255" },
+                { icon: MessageCircle, text: "WhatsApp", subtext: "+91 9884063255", href: "https://wa.me/919884063255" },
+                { icon: MailIcon, text: "Email", subtext: "ezhilrav@gmail.com", href: "mailto:ezhilrav@gmail.com" }
+              ].map((item, index) => (
+                <a 
+                  key={index}
+                  href={item.href} 
+                  target={item.icon === MessageCircle ? "_blank" : "_self"}
+                  rel={item.icon === MessageCircle ? "noopener noreferrer" : ""}
+                  className="flex flex-col items-center p-6 bg-gray-800 hover:bg-gray-700 rounded-lg transition duration-300"
+                >
+                  <item.icon size={48} className="text-green-400 mb-4" />
+                  <span className="text-lg font-semibold">{item.text}</span>
+                  <span className="text-gray-300">{item.subtext}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+  
+        {/* Footer */}
+        <footer className="bg-gray-900 text-white py-8">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <p>&copy; {new Date().getFullYear()} Ezhil R. All rights reserved.</p>
+            <p className="mt-2 text-sm text-gray-400">Want to check out my music? Well, find the easter egg to check my Spotify out!</p>
+          </div>
+        </footer>
+  
+        {/* Scroll Progress Indicator */}
+        <motion.div 
+          className="fixed top-0 left-0 right-0 h-1 bg-green-400 z-50"
+          style={{ scaleX: scrollPosition / (document.documentElement.scrollHeight - window.innerHeight) }}
+        />
+      </div>
+    );
+  };
+  
+  export default Home;
