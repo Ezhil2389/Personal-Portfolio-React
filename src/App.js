@@ -11,18 +11,25 @@ const NavLink = ({ to, children, onClick, className }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    if (to === '/certificates') {
+    const [path, hash] = to.split('#');
+    
+    if (location.pathname !== path) {
       navigate(to);
-      window.scrollTo(0, 0);
-    } else if (to === '/') {
-      navigate(to);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      const element = document.querySelector(to);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (hash) {
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+    } else if (hash) {
+      const element = document.getElementById(hash);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    
     if (onClick) onClick();
   };
 
@@ -70,10 +77,10 @@ const App = () => {
               <Link to="/" className="text-2xl font-bold text-green-400 shine-effect" onClick={scrollToTop}>ER</Link>
               <div className="hidden md:flex space-x-8">
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="#skills">Skills</NavLink>
-                <NavLink to="#projects">Projects</NavLink>
+                <NavLink to="/#skills">Skills</NavLink>
+                <NavLink to="/#projects">Projects</NavLink>
                 <NavLink to="/certificates">Certificates</NavLink>
-                <NavLink to="#contact">Contact</NavLink>
+                <NavLink to="/#contact">Contact</NavLink>
               </div>
               <div className="md:hidden">
                 <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -86,10 +93,10 @@ const App = () => {
           <div className={`${menuOpen ? 'block' : 'hidden'} md:hidden bg-gray-800 absolute top-full left-0 right-0 shadow-lg`}>
             <div className="flex flex-col px-4 py-2">
               <NavLink to="/" className="mobile-nav-link" onClick={toggleMenu}>Home</NavLink>
-              <NavLink to="#skills" className="mobile-nav-link" onClick={toggleMenu}>Skills</NavLink>
-              <NavLink to="#projects" className="mobile-nav-link" onClick={toggleMenu}>Projects</NavLink>
+              <NavLink to="/#skills" className="mobile-nav-link" onClick={toggleMenu}>Skills</NavLink>
+              <NavLink to="/#projects" className="mobile-nav-link" onClick={toggleMenu}>Projects</NavLink>
               <NavLink to="/certificates" className="mobile-nav-link" onClick={toggleMenu}>Certificates</NavLink>
-              <NavLink to="#contact" className="mobile-nav-link" onClick={toggleMenu}>Contact</NavLink>
+              <NavLink to="/#contact" className="mobile-nav-link" onClick={toggleMenu}>Contact</NavLink>
             </div>
           </div>
         </nav>
